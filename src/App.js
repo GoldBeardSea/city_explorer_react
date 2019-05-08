@@ -1,26 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+const Header = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <header>
+      <h1>City Explorer</h1>
+      <p>Enter a location below to learn about the weather, events, restaurants, movies, and more!</p>
+    </header>
   );
+};
+
+const Main = () => {
+  return (
+
+  )
+
+}
+
+class Content extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      counter: 0,
+    }
+  };
+
+  render() {
+    return (
+      <div>
+        <h3>{this.state.counter}</h3>
+        <button onClick={this.decrement}> Decrement </button>
+        <button onClick={this.increment} > Increment </button>
+        <button onClick={this.pow} > Pow </button>
+        <button onClick={this.sqrt} > sqrt  </button>
+      </div>
+    );
+  }
+}
+
+class App extends React.Component {
+  render() {
+  return (
+    <React.Fragment>
+      <App>
+  <Header>
+  <Main>
+    <Search>
+    <Map>
+    <Result>
+    </React.Fragment>
+    );
+  }
 }
 
 export default App;
