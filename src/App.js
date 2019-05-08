@@ -4,51 +4,73 @@ const Header = () => {
   return (
     <header>
       <h1>City Explorer</h1>
-      <p>Enter a location below to learn about the weather, events, restaurants, movies, and more!</p>
+      <p>Enter a location below to learn about the weather, events, restaurants, movies filmed there, and more!</p>
     </header>
   );
 };
 
-const Main = () => {
-  return (
-
-  )
-
-}
-
-class Content extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      counter: 0,
-    }
-  };
+class App extends React.Component {  
 
   render() {
     return (
-      <div>
-        <h3>{this.state.counter}</h3>
-        <button onClick={this.decrement}> Decrement </button>
-        <button onClick={this.increment} > Increment </button>
-        <button onClick={this.pow} > Pow </button>
-        <button onClick={this.sqrt} > sqrt  </button>
-      </div>
+      <React.Fragment>
+        <Header />
+        <Main />
+      </React.Fragment>
     );
   }
 }
 
-class App extends React.Component {
-  render() {
-  return (
-    <React.Fragment>
-      <App>
-  <Header>
-  <Main>
-    <Search>
-    <Map>
-    <Result>
-    </React.Fragment>
+class Main extends React.Component {
+  
+  render () {
+    return (
+      <React.Fragment>
+        <Search />
+        <Map />
+        <Result />
+        <Result />
+        <Result />
+        <Result />
+        <Result />
+      </React.Fragment>
+    );
+  }
+}
+
+class Search extends React.Component {
+  
+  render () {
+    return (
+      <form>
+        <input type="text" id="back-end-url"></input>
+        <button>Submit</button>
+      </form>
+    );
+  }
+}
+
+class Map extends React.Component {
+
+  render () {
+    return (
+      <section>
+      <img id="map" class="" src="" alt="Placeholder" />
+      </section>
+    );
+  }
+}
+
+class Result extends React.Component {
+  
+  render () {
+    return (
+      <section>
+      <ul>
+        <li>API Call</li>
+      </ul>
+      </section>
+
     );
   }
 }
