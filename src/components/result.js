@@ -6,7 +6,8 @@ class Result extends React.Component {
     super(props);
 
     this.state = {
-      data: {}
+      lat: '',
+      long: '',
     }
   }
   

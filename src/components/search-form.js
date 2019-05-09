@@ -1,7 +1,7 @@
 import React from 'react';
 import superagent from 'superagent';
 
-class Form extends React.Component {
+class SearchForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -15,5 +15,14 @@ class Form extends React.Component {
     let data = await superagent.get('heroku backend')
   }
 
-  
+  render () {
+    return (
+      <form>
+        <input type="text" id="back-end-url"></input>
+        <button>Submit</button>
+      </form>
+    );
+  }
 }
+
+export default SearchForm;
