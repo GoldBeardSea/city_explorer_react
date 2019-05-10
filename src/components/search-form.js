@@ -19,6 +19,8 @@ class SearchForm extends React.Component {
     e.preventDefault();
     let data = await superagent.get(`${this.props.herokuServer}/location?data=${this.state.queryString}`);
     let locationCoord = data.body;
+    console.log('hit before the call');
+    console.log(locationCoord);
     this.props.updateLocationCoord(locationCoord);
   };
 

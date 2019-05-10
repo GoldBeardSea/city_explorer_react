@@ -9,11 +9,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       location: {},
-      herokuServer: 'https://city-explorer-backend.herokuapp.com'
+      herokuServer: 'https://blooming-hollows-11631.herokuapp.com'
     };
   }
 
   updateLocationCoord = (location) => {
+    console.log(location)
     this.setState({location});
   }
 

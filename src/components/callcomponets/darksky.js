@@ -9,9 +9,9 @@ class Darksky extends React.Component {
       locationCoord: 0
     };
   }
-
-  updateLocationCoord(){
-    if(this.props.location.id !== this.state.locationCoord){
+  
+    //trigger api call, with component mount lifecycle to do 
+  updateLocationCoord() {
       this.apiCall();
     }
   }
@@ -19,6 +19,7 @@ class Darksky extends React.Component {
   apiCall = async () => {
     if(Object.entries(this.props.location).length !== 0 && this.props.location.constructor === Object){
       let data = await superagent.get(`${this.props.herokuServer}+/weather`).query({data: this.props.location});
+      console.log(data);
       this.setState((state, props) =>{
         return {weatherData: data.body, locationCoord: this.props.location.id};
       })

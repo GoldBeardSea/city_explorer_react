@@ -10,11 +10,7 @@ class Eventbrite extends React.Component {
     };
   }
 
-  updateLocationCoord(){
-    if(this.props.location.id !== this.state.locationCoord){
-      this.apiCall();
-    }
-  }
+  //trigger api call, with component mount lifecycle
 
   apiCall = async () => {
     if(Object.entries(this.props.location).length !== 0 && this.props.location.constructor === Object){
