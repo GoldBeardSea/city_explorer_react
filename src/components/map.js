@@ -1,15 +1,17 @@
 import React from 'react';
 
+const Map = (props) => {
 
-class Map extends React.Component {
-
-  render () {
-    return (
-      <section>
-      <img id="map" class="" src="" alt="Placeholder" />
-      </section>
-    );
-  }
+  let mapSrc = `https://maps.googleapis.com/maps/api/staticmap?center=${props.location.latitude}%2c%20${props.location.longitude}&zoom=13&size=600x300&maptype=roadmap
+  &key=${process.env.REACT_APP_GEOCODE_API_KEY}`;
+  
+  return (
+      <img id="map" className="hide" src={`${mapSrc}`} alt="Map of search query" />
+  );
 }
 
 export default Map;
+
+
+
+
