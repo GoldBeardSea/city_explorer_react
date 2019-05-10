@@ -6,20 +6,27 @@ class SearchForm extends React.Component {
     super(props);
 
     this.state = {
-      words: ''
-    }
+      queryString: '',
+    };
   }
+
+  handlequeryString = e => {
+    let queryString = e.target.value;
+    this.setState({ queryString });
+  };
 
   handleSubmit = async e => {
     e.preventDefault();
-    let data = await superagent.get('heroku backend')
-  }
+    let data = await superagent.get(`${this.props.herokuServer}/location?data=${this.state.queryString}`);
+    let locationCoord = data.body;
+    this.props.updateLocationCoord(locationCoord);
+  };
 
-  render () {
+  render() {
     return (
-      <form>
-        <input type="text" id="back-end-url"></input>
-        <button>Submit</button>
+      <form onSubmit={this.handleSubmit}>
+        <input onChange={this.handlequeryString} />
+        <button>Explore!</button>
       </form>
     );
   }
